@@ -1,0 +1,215 @@
+/* Body ve genel stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Header stil */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ffa3a3);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Başlık font boyutu */
+header h1 {
+    font-size: 2.5em;
+}
+
+/* Navigation için stil */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff6b6b, #ffa3a3);
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation linkleri */
+nav a {
+    position: relative;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover efekti */
+nav a:hover {
+    color: #ffde59;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Bölüm stil */
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+/* Başlık stili */
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+}
+
+/* Galeri stili */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun oluşturur */
+    gap: 20px; /* Fotoğraflar arasındaki boşluk */
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%; /* Fotoğrafın genişliği container'a uysun */
+    height: auto; /* Yüksekliği otomatik olarak ayarlar */
+    border-radius: 10px; /* Hafif yuvarlatılmış köşeler */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    transition: transform 0.3s ease-in-out; /* Hover efektine geçiş */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Hover efektinde büyütme */
+}
+
+/* Audio player stil */
+.audio-player {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+audio {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+/* Zaman çizelgesi stil */
+.timeline {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline li {
+    margin: 20px 0;
+    padding: 20px;
+    background: #ffe5e5;
+    border-radius: 10px;
+    position: relative;
+}
+
+.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+}
+
+/* Footer stil */
+footer {
+    text-align: center;
+    background: linear-gradient(135deg, #ffa3a3, #ff6b6b);
+    color: white;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design - Mobile */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Küçük ekranlar için daha küçük başlık */
+    }
+
+    /* Navigation linkleri */
+    nav {
+        flex-direction: column; /* Linkler dikey sıralansın */
+    }
+
+    nav a {
+        margin: 10px 0; /* Linkler arasındaki boşluk */
+        font-size: 16px; /* Küçük ekranlar için font büyüklüğü */
+    }
+
+    /* Galeri stilini daha küçük hale getirelim */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+    }
+
+    .gallery img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Zaman çizelgesi stilini biraz daha küçük yapalım */
+    .timeline li {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+/* Responsive Design - Extra Small Devices (Phones) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em; /* Daha küçük başlık */
+    }
+
+    nav a {
+        font-size: 14px; /* Dikey linkler için küçük font */
+        padding: 8px 15px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Tek sütun */
+    }
+
+    .timeline li {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
